@@ -1,21 +1,26 @@
 <div class="row">
   <div class="col-xs-12">
-    <img class="img-responsive" src="" alt="">
+    <img class="img-responsive" src="{{recipeD.imagePath}}" alt="">
 
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1> {{recipeD.name}}</h1>
   </div>
 </div>
+
+
 <div class="row">
   <div class="col-xs-12">
-
-    <div class="btn-group">
+<!-- Ine way of toggling the div:[ngClass]="{open: isToggled}" (click)="toggelDropDown()" -->
+    <div class="btn-group" appDropdown >
+      <!-- when using inserting and removing element using TemplateRef & ViewContainerRef -->
+      <!-- <button class="btn btn-primary dropdown-toggle" (click)="toggelDropDown()">Manage recipe<span class="caret"></span></button> -->
       <button class="btn btn-primary dropdown-toggle">Manage recipe<span class="caret"></span></button>
-      <ul class="dropdown-menu">
+      <!-- <ul class="dropdown-menu" *appDropdown="isToggled"> -->
+        <ul class="dropdown-menu">
         <li><a href="#">Add ingredients</a></li>
         <li><a href="#">Edit recipe</a></li>
         <li><a href="#">Delete Recipe</a></li>
@@ -25,11 +30,11 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-  Description
+    {{recipeD.description}}
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Ingredient
+    ingredients
   </div>
 </div>
