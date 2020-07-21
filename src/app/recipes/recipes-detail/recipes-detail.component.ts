@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -9,7 +10,7 @@ import { Recipe } from '../recipe.model';
 export class RecipesDetailComponent implements OnInit {
   isToggled:boolean=false;
   @Input() recipeD:Recipe;
-  constructor() { }
+  constructor(private recipeService:RecipeService) { }
 
   ngOnInit(): void {
   }
@@ -17,5 +18,10 @@ export class RecipesDetailComponent implements OnInit {
   toggelDropDown(){
     console.log("toggling...")
     this.isToggled=!this.isToggled
+  }
+
+  addIngredientToshoppingList(){
+    console.log("updating shopping list..")
+this.recipeService.updateShoppingList(this.recipeD.ingredients)
   }
 }

@@ -21,7 +21,7 @@
       <button class="btn btn-primary dropdown-toggle">Manage recipe<span class="caret"></span></button>
       <!-- <ul class="dropdown-menu" *appDropdown="isToggled"> -->
         <ul class="dropdown-menu">
-        <li><a href="#">Add ingredients</a></li>
+        <li><a href="#" (click)="addIngredientToshoppingList()">Add ingredients</a></li>
         <li><a href="#">Edit recipe</a></li>
         <li><a href="#">Delete Recipe</a></li>
       </ul>
@@ -29,12 +29,17 @@
   </div>
 </div>
 <div class="row">
+
   <div class="col-xs-12">
+    <h4>Recipe Description</h4>
     {{recipeD.description}}
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    ingredients
+    <h4>The Ingredients</h4>
+    <ul *ngFor="let ingredient of recipeD.ingredients">
+      <li>{{ingredient.name}}  {{ingredient.amount}}</li>
+    </ul>
   </div>
 </div>
