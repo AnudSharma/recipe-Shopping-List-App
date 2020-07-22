@@ -15,11 +15,11 @@ recipeDetails:Recipe;
 
   ngOnInit(){
     console.log("getting value")
-    this.recipeService.getSelectedRecipe().subscribe((value:Recipe)=>{
-      console.log(value);
-      this.recipeDetails=value
-    }
-    )
+    // this.recipeService.getSelectedRecipe().subscribe((value:Recipe)=>{
+    //   console.log(value);
+    //   this.recipeDetails=value
+  //  }
+  // )
   }
 
   // recipeDescription(recipeD:Recipe){
